@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Слайдер</title>
+    <style>
+        body {
+            background-color: #24292d;
+        }
+
+        .imgs {
+            position: relative;
+            width: 470px;
+            height: 320px;
+            outline: 3px solid orange;
+            background: #695753;
+            margin: 0 auto;
+        }
+
+        img {
+            position: absolute;
+            width: 470px;
+            left: 0;
+            top: 0;
+            display: block;
+            padding: 0px;
+            filter: opacity(0) blur(10px);
+            transition: 1s ease-in-out;
+        }
+
+        img:target {
+            filter: opacity(100%) blur(0)
+        }
+
+        #one {
+            filter: opacity(100%) blur(0)
+        }
+
+        nav {
+            display: inline-block;
+            padding: 10px 0;
+            margin-top: 325px;
+            width: 100%;
+            text-align: center;
+        }
+
+        a {
+            display: inline-block;
+            margin-right: 10px;
+            background: #ECD9D3;
+            width: 20px;
+            height: 20px;
+            color: #695753;
+        }
+
+        a:last-child {
+            margin-right: 0;
+        }
+
+        .current {
+            background: #ECA797;
+        }
+
+        #two:target~nav #a2,
+        #three:target~nav #a3,
+        #four:target~nav #a4 {
+            background: #ECA797;
+        }
+
+
+        #two:target~nav #a1,
+        #three:target~nav #a1,
+        #four:target~nav #a1 {
+            background: #ECD9D3;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div id="slideshow"> -->
+    <div class="imgs">
+        <img id="one" src="29000.jpg">
+        <img id="two" src="29001.jpg">
+        <img id="three" src="29002.jpg">
+        <img id="four" src="29003.jpg">
+
+        <nav>
+            <a href="#one" class="current" id="a1"></a>
+            <a href="#two" id="a2"></a>
+            <a href="#three" id="a3"></a>
+            <a href="#four" id="a4"></a>
+        </nav>
+    </div>
+    <!-- </div> -->
+
+
+</body>
+
+</html>
